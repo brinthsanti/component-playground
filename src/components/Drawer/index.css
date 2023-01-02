@@ -1,0 +1,56 @@
+.drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+.drawer-mask {
+    position: absolute;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,.45);
+    pointer-events: auto;
+}
+
+.drawer-content{
+    position: absolute;
+    z-index: 1000;
+    transition: all .3s;
+    overflow: auto;
+    width: 500px;
+    background: #fff;
+    pointer-events: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: -6px 0 16px -8px #00000014, -9px 0 28px #0000000d, -12px 0 48px 16px #00000008;
+}
+
+.drawer-header {
+    display: flex;
+    flex: 0;
+    align-items: center;
+    padding: 16px 24px;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.drawer-header button{
+    display: inline-block;
+    margin-right: 12px;
+    color: #00000073;
+    font-weight: 700;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: color .3s;
+    text-rendering: auto;
+}

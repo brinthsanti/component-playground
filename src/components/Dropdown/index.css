@@ -1,0 +1,18 @@
+.dropdown{
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.dropdown .dropdown-items{
+    position: absolute;
+    padding: 10px;
+    margin: 0;
+    font-size: 1rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}

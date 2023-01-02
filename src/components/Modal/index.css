@@ -1,0 +1,63 @@
+.modal-mask {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    height: 100%;
+    background-color: #00000073;
+}
+
+.modal{
+    position: fixed;
+    inset: 0;
+    overflow: auto;
+    outline: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    padding: 0 0 24px;
+    color: #000000d9;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    pointer-events: none;
+    top: 100px;
+    width: 500px;
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
+}
+
+.modal-content{
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+    pointer-events: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0;
+    color: #00000073;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.modal-header {
+    padding: 16px 24px;
+    color: #000000d9;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    border-radius: 2px 2px 0 0;
+}

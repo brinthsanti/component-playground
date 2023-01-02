@@ -1,0 +1,19 @@
+.menu {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  list-style: none;
+  cursor: pointer;
+}
+.menu .sub-menu-root {
+  background: #fafafa;
+}
+.menu .menu-submenu .menu-submenu-title > * {
+  display: inline-block;
+}
+.menu .menu-submenu .menu-submenu-title {
+  display: flex;
+  padding: 10px;
+}
+
+.menu .menu-submenu .menu-submenu-title .icon {
+  padding-right: 10px;
+}
