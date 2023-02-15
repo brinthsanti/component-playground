@@ -1,6 +1,6 @@
 import React, {useState, useMemo} from 'react';
 import './index.css';
-import { StarOutlined, StarFilled, StarTwoTone } from '@ant-design/icons';
+import { StarFilled } from '@ant-design/icons';
 
 const color =  {
     filled: "#f5eb3b",
@@ -39,7 +39,7 @@ const Rate = ({
             />
           ));
       }, [count, rating, hoverRating]);
-    console.log(hoverRating);
+      
       return <div>{starRating}{hoverRating}</div>;
 };
 

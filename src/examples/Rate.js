@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Rate } from '../components/Rate';
 
 const RateExamples = () => {
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = useState(4);
     return (
         <div>
             <Rate
