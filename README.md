@@ -29,7 +29,7 @@ React.Children.map(children, (childe, index) =>
 > add track and handles div
 > Make all the childs of track as inline block
 > calculate the width of the track depending on
- the with of its children
+ the width of its children
 > Make the container overflow as hidden
 > Add state to track container width and set the
 child of track's with as container width
