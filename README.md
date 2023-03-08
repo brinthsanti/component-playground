@@ -27,7 +27,7 @@ React.Children.map(children, (childe, index) =>
 > Carousel
 
 > add track and handles div
-> Make all the childs of track as inline block
+> Make all the childs of track as inline block and box-sizing as border box
 > calculate the width of the track depending on
  the width of its children
 > Make the container overflow as hidden
@@ -38,3 +38,30 @@ child of track's with as container width
 > In the click handler setTransform(index * containerWidth)
 
 For responsiveness add resize event and change the client width and set transform to intial state.
+
+> Stopwatch
+
+> add a paragragh and handle div with background black
+> give paragraph a font size of 80px and align to center;
+> inside the handle add three button start, stop and reset
+> add two states isRunning and time
+> Add an effect with isrunning and time as dependency and increment by 1000 ms 
+> If isRunning is true start the time. if its false clear the timer. Dont forget
+clear each interval in the cleanup function
+
+> ms to seconds = Math.floor((time % 60000) / 1000);
+> ms to minutes = Math.floor((time % (60 * 60000) ) / 60000);
+> ms to hour = Math.floor((time % (24 * 60 * 60000))/(60*60000));
+
+> Timer
+> add a paragragh and handle div with background black
+> give paragraph a font size of 80px and align to center;
+> inside the handle add three button start, stop and reset
+> add two states isRunning and time
+> Add an effect with isrunning and time as dependency. and decrement time by 1000 ms
+> If isRunning is true start the time. if its false clear the timer. Dont forget
+clear each interval in the cleanup function
+
+> ms to seconds = Math.floor((time % 60000) / 1000);
+> ms to minutes = Math.floor((time % (60 * 60000) ) / 60000);
+> ms to hour = Math.floor((time % (24 * 60 * 60000))/(60*60000));
