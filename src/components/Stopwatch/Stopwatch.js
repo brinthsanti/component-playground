@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import './index.scss';
 export default function Stopwatch() {
     const [isRunning, setIsRunning] = useState(false);
