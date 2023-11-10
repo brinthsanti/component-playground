@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./index.css";
 import React, { useState } from "react";
 import { FcPrevious, FcNext } from "react-icons/fc";
 

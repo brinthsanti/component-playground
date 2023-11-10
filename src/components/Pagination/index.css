@@ -1,6 +1,5 @@
-.pagination{
 
-.controls{
+.pagination .controls{
   text-align: center;
   button{
     cursor: pointer;
@@ -16,6 +15,4 @@
       background: gray;
     }
   }
-}
-  
 }

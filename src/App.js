@@ -26,6 +26,8 @@ import InfiniteScrollerExamples from './examples/InfiniteScroller';
 import StopwatchExamples from './examples/Stopwatch';
 import TimerExamples from './examples/Timer'; 
 import CommentBoxExample from './examples/CommentBox';
+import CalendarExample from './examples/Calendar';
+import TictacktoeExamples from './examples/Tictacktoe';
 
 function App(props) {
   const location = useLocation();
@@ -57,6 +59,8 @@ function App(props) {
         <Route path="/stopwatch" element={<StopwatchExamples />} />
         <Route path="/timer" element={<TimerExamples />} />
         <Route path="/comment-box" element={<CommentBoxExample />} />
+        <Route path="/calendar" element={<CalendarExample />} />
+        <Route path='/tictacktoe' element={<TictacktoeExamples/>} />
         <Route path="/" element={<Grid />} />
       </Routes>
     </div>

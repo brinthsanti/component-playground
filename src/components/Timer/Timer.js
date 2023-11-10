@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./index.scss";
+import "./index.css";
 
 export default function Timer({duration = 5000}){
   const [time, setTime] = useState(duration);

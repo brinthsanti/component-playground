@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Comment from './Comment/Comment';
 import { useImmer } from "use-immer";
-import './index.scss';
+import './index.css';
 
 const CommentBox = ({ data = [], setData }) => {
     const [inputVal, setInputVal] = useState('');
