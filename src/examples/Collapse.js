@@ -13,18 +13,6 @@ const CollapseExamples = () => {
     };
     return (
         <div>
-            <h3>Ant Collapse</h3>
-            <AntCollapse defaultActiveKey={['1']} onChange={onChange}>
-                <AntPanel header="This is panel header 1" key="1">
-                    <p>{text}</p>
-                </AntPanel>
-                <AntPanel header="This is panel header 2" key="2">
-                    <p>{text}</p>
-                </AntPanel>
-                <AntPanel header="This is panel header 3" key="3">
-                    <p>{text}</p>
-                </AntPanel>
-            </AntCollapse>
             <h2>My Collapse</h2>
             <Collapse defaultActiveId={['3', '2']} >
                 <Panel header="This is panel header 1" id="1">

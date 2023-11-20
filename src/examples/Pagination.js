@@ -5,7 +5,11 @@ import React from 'react';
 const PaginationExample = () => {
     return (
         <div>
-            <Pagination total={25} defaultCurrent={5}/>
+      <Pagination
+        totalItems={100}
+        itemsPerPage={10}
+        onChange={()=>{}}
+      ></Pagination>
         </div>
     );
 };

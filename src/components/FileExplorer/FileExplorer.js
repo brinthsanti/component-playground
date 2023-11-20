@@ -43,8 +43,8 @@ const FileExplorer = ({ explorer, handleInsertion }) => {
         </span>
         
         <div>
-            <button onClick={(e) => handleNewFolder(e, true)}>Folder</button>
-            <button onClick={(e) => handleNewFolder(e, false)}>File</button>
+            <button onClick={(e) => handleNewFolder(e, true)}>Add Folder</button>
+            <button onClick={(e) => handleNewFolder(e, false)}>Add File</button>
         </div>
       </div>
 

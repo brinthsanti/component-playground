@@ -1,18 +1,20 @@
-
-.pagination .controls{
+.pagination .controls {
   text-align: center;
-  button{
-    cursor: pointer;
-    background: #28282b;
-    color: white;
-    border: 2px solid teal;
-    padding: 10px;
-    &.active {
-      border-color: white;
-    }
+}
 
-    &.disabled {
-      background: gray;
-    }
-  }
+.pagination .controls button {
+  cursor: pointer;
+  background: #28282b;
+  color: white;
+  border: 2px solid teal;
+  padding: 10px;
+}
+
+.pagination .controls button.active{
+  background-color: teal;
+  color: white;
+}
+
+.pagination .controls button[disabled]{
+  cursor: not-allowed;
 }

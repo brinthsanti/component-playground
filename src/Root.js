@@ -6,7 +6,7 @@ import BreadcrumbExamples from './examples/Breadcrumb';
 import DropdownExamples from './examples/Dropdown';
 import Menu from './examples/Menu';
 import PaginationExample from './examples/Pagination';
-import StepsExample from './examples/Steps';
+import StepsExample from './examples/Stepper';
 import AutoCompleteExamples from './examples/AutoComplete';
 import SelectExamples from './examples/Select';
 import RateExamples from './examples/Rate';
@@ -28,6 +28,8 @@ import CommentBoxExample from './examples/CommentBox';
 import CalendarExample from './examples/Calendar';
 import TictacktoeExamples from './examples/Tictacktoe';
 import App from './App';
+import NestedCheckboxExamples from "./examples/NestedCheckbox";
+import ScrollerExamples from "./examples/Scroller";
 
 function Root() {
     return (
@@ -38,7 +40,8 @@ function Root() {
             <Route path="/layout" element={<Layout />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/pagination" element={<PaginationExample />} />
-            <Route path="/steps" element={<StepsExample />} />
+            <Route path="/infinite-scroller" element={<InfiniteScrollerExamples />} />
+            <Route path="/stepper" element={<StepsExample />} />
             <Route path="/autocomplete" element={<AutoCompleteExamples />} />
             <Route path="/select" element={<SelectExamples />} />
             <Route path="/rate" element={<RateExamples />} />
@@ -53,13 +56,14 @@ function Root() {
             <Route path="/notification" element={<NotificationExamples />} />
             <Route path="/timeline" element={<TimelineExamples />} />
             <Route path="/file-explorer" element={<FileExplorerExamples />} />
-            <Route path="/infinite-scroller" element={<InfiniteScrollerExamples />} />
             <Route path="/stopwatch" element={<StopwatchExamples />} />
             <Route path="/timer" element={<TimerExamples />} />
             <Route path="/comment-box" element={<CommentBoxExample />} />
             <Route path="/calendar" element={<CalendarExample />} />
             <Route path='/tictacktoe' element={<TictacktoeExamples />} />
             <Route path='/grid' element={<Grid />} />
+            <Route path='/nestedcheckboxes' element={<NestedCheckboxExamples />} />
+            <Route path='scroller' element={<ScrollerExamples/>} />
             <Route path="/" element={<App />} />
         </Routes>
     );

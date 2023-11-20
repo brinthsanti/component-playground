@@ -1,6 +1,2 @@
-export { Dropdown } from './Dropdown';
+export { default as Dropdown, DropdownItem } from './Dropdown';
 
-// pending
-//  animation
-//  position
-// arrow

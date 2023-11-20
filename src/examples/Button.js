@@ -1,11 +1,10 @@
 import React from 'react';
-import Button, { AntButton } from '../components/Button';
+import Button from '../components/Button';
 import { SearchOutlined } from '@ant-design/icons';
 
 const ButtonExample = () => {
     return (
         <><section>
-            <AntButton />
         </section><section>
                 <h1>Type</h1>
                 <Button type='primary'>Primary</Button>

@@ -3,6 +3,14 @@
 
 -> For different type of button get type as a prop and add the class for it upfront. eg: button.primary, button.secondary
 
+> Breadcrumb
+ -> Use render prop for rendering items and context for private state.
+
+> Dropdown
+ -> use trigger prop with options click and hover. For hover use mouseEnter and mouseLeave event,
+ -> useClickoutside hook for close the dropdown on clicking outside
+ -> Dont forget box shadow
+
 > Collapse Panel
 
 -> Add two div one for header and other for body
@@ -67,7 +75,7 @@ clear each interval in the cleanup function
 > ms to hour = Math.floor((time % (24 * 60 * 60000))/(60*60000));
 
 
-> Pagination
+## Pagination
 
 > Add a handle div inside pagination div
 > Add prev and next button inside handle div
@@ -82,7 +90,28 @@ by increment and vice versa.
 
 >> slicing with page formula [..].slice(page * itemsPerPage - itemsPerPage, page * itemsPerPage)
 
-> Infinite Scroll
+/*
+
+# Paging slicing mechanism
+arr.slice(page * itemsPerPage - itemsPerPage, page * itemsPerPage);
+[1,2,3,4,5,6,7,8,9,10]
+
+TotalPages = 10;
+itemsPerPage = 2;
+
+Expected: 
+page slice   result
+     window
+1 -  0, 2 = [1,2]
+2 -  2, 4 = [3,4]
+3 -  4, 6 = [5,6]
+4 -  6, 8 = [7,8]
+5 -  8, 10 = [9,10]
+
+*/
+
+
+## Infinite Scroll
 
 > Add a state lastElement to track the last element
 > Add a ternary in the div container to pass lastElement as callback ref (ref={index === products.length - 1 ? setLastElement : null})

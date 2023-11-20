@@ -1,0 +1,77 @@
+
+.stepper{
+    background-color: white;  
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    width: 80%;
+    padding: 20px;
+  }
+  
+  
+  .stepper .steps-container{
+      position: relative;
+      z-index: 1;
+  }
+  .stepper .steps-container .steps{
+      display: flex;
+      justify-content: space-between;
+  }
+  .stepper .steps-container .steps > div:not(:last-child){
+    flex-grow: 1;
+    flex-shrink: 0; 
+    flex-basis: 0;
+  
+    /* In your case:
+  
+  Setting flex-grow: 1; for all items means they will share the available space equally.
+  Setting flex-shrink: 0; prevents the items from shrinking if there's not enough space.
+  Setting flex-basis: 0; along with flex-grow: 1; allows the items to share the available space equally based on the flex-grow property, ignoring the content's intrinsic size.
+  By combining these properties, you create a flexible layout where items can grow based on the flex-grow values but won't shrink (flex-shrink: 0;) and will start with an initial size of zero (flex-basis: 0;).
+  
+  This combination is particularly useful when you want items to share space equally, and you want to prevent a single item from growing excessively based on its content. The flex-basis: 0; effectively resets the initial size, allowing flex-grow to work more consistently across items. */
+  }
+  
+  .stepper .steps-container .line{
+      position: relative;
+      height: 2px;
+      z-index: -1;
+      background-color: gray;
+      width: 100%;
+      top: -25px;
+  }
+  
+  .stepper .steps button {
+      box-sizing: border-box;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      background: white;
+      border: 2px solid lightgray;
+      color: lightgreen;
+  }
+  
+  .stepper .steps button.active{
+      background-color: lightgreen;
+      color: white;
+  }
+  .stepper .content{
+      margin-top: 20px;
+      min-height: 500px;
+  }
+  .stepper .controls{
+   display: flex;
+   justify-content: space-around;
+  }
+  
+  .stepper .controls button{
+      background: white;
+      border: 2px solid lightgray;
+      color: black;
+      padding: 15px;
+      cursor: pointer;
+  }
+  
+  .stepper .controls button:hover{
+      color: white;
+      background-color: darkblue;
+  }

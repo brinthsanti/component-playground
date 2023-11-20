@@ -1,53 +1,23 @@
-.carousel {
+.carousel{
   overflow: hidden;
-  margin-top: 20px;
-  position: relative;
+  box-sizing: border-box;
 }
-
-.carousel-track {
-  position: relative;
+.carousel_track {
   transition: transform 500ms ease-in-out;
 }
 
-.handles {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  list-style: none;
-  bottom: 0;
-}
-
-.handles li {
-  position: relative;
+.carousel_track > div {
   display: inline-block;
-  flex: 0 1 auto;
-  box-sizing: content-box;
-  width: 16px;
-  height: 3px;
-  margin: 0 3px;
-  padding: 0;
-  text-align: center;
-  text-indent: -999px;
-  vertical-align: top;
-  transition: all 0.5s;
 }
 
-.handles li button {
-  display: block;
-  width: 100%;
-  height: 3px;
-  padding: 0;
-  color: transparent;
-  font-size: 0;
-  background: #fff;
-  border: 0;
-  border-radius: 1px;
-  outline: none;
+.carousel_handles {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.carousel_handles button {
+  padding: 2px 7px;
   cursor: pointer;
-  opacity: 0.3;
-  transition: all 0.5s;
-}
-
-.handles li button.active{
-   opacity: 1;
 }

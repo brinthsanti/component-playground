@@ -1,0 +1,12 @@
+.rating .star{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.rating {
+    display: flex;
+    margin-top: 100px;
+}

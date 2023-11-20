@@ -14,9 +14,7 @@ const CollapsePanel = ({
         e.stopPropagation();
         setShowContent((prevState) => !prevState);
         setActiveKey(id)
-        console.log('called');
     }
-console.log(activeKey)
      const show = accordion ? activeKey === id : showContent;
     return (
         <div className='collapse-panel' onClick={(e)=>handleClick(e,id)}>

@@ -18,6 +18,8 @@ const AutoComplete = ({
       setSuggestions([]);
       return;
     }
+
+    //  const suggestion = options.filter((val) => val.includes(inputValue)); // This will not work bcoz of case sensitivity.
     const suggestion = options.filter(
       (data) =>
         data.label.toLowerCase().indexOf(searchText.toLowerCase()) !== -1

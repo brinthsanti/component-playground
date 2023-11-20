@@ -20,9 +20,9 @@
 }
 
 .auto-complete-dropdown{
-    margin-top: 3px;
     position: absolute;
     width: 100%;
+    top: 100%; /* to place the dropdown after the containing block*/
     min-height: 100px;
     box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
 }

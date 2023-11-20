@@ -11,18 +11,20 @@ export default function Pagination({
 }) {
   const [page, setPage] = useState(1);
   function handleClick(pageNumber) {
-    if (pageNumber >= 1 && pageNumber <= totalItems / 10) {
       onChange(pageNumber);
       setPage(pageNumber);
-    }
   }
-  const cc = React.Children.toArray(children).slice(page * 10 - 10, page * 10);
+  const cc = React.Children.toArray(children).slice(
+    page * itemsPerPage - itemsPerPage,
+    page * itemsPerPage
+  );
+
   return (
     <div className="pagination">
       <div className={className}> {cc}</div>
       <div className="controls">
         <button
-          className={page > 1 ? "" : "disabled"}
+          disabled={page<=1}
           onClick={() => handleClick(page - 1)}
         >
           <FcPrevious />
@@ -39,7 +41,7 @@ export default function Pagination({
           );
         })}
         <button
-          className={page < totalItems / 10 ? "" : "disabled"}
+          disabled={page>=totalItems/itemsPerPage}
           onClick={() => handleClick(page + 1)}
         >
           <FcNext />

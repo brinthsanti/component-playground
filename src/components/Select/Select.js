@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import classNames from "classnames";
 import "./index.css";
 import CloseCircleOutlined from "@ant-design/icons/CloseCircleOutlined";
@@ -9,10 +9,25 @@ export const SelectContext = React.createContext({
   selectedLabels: [],
 });
 
-const Select = ({ style, className, placeholder, children }) => {
+const MultiSelect = ({ style, className, placeholder, children }) => {
   const [options, setOptions] = useState([]);
   const [searchText, setsearchText] = useState("");
   const [selectedLabels, setSelectedLabels] = useState([]);
+  const containerRef = useRef();
+
+  useEffect(()=>{
+
+    function handleMouseDown(e){
+      const container = containerRef.current;
+       if(container && !container.contains(e.target)){
+          setOptions([]);
+       }
+    }
+    document.addEventListener('mousedown', handleMouseDown);
+    return ()=>{
+      document.removeEventListener('mousedown', handleMouseDown);
+    }
+  })
 
   function handleInput(e) {
     const text = e.target.value;
@@ -21,10 +36,6 @@ const Select = ({ style, className, placeholder, children }) => {
 
   function handleFocus() {
     setSuggestions();
-  }
-
-  function handleBlur() {
-    setOptions([]);
   }
 
   function handleClick(e) {
@@ -48,7 +59,6 @@ const Select = ({ style, className, placeholder, children }) => {
       (data) =>
         data.props.value.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
     );
-    console.log(suggestion);
     setOptions(suggestion);
   }
 
@@ -63,7 +73,7 @@ const Select = ({ style, className, placeholder, children }) => {
   // console.log(React.Children.toArray(children))
   return (
     <SelectContext.Provider value={contextValue}>
-      <div className={classes} style={style}>
+      <div className={classes} style={style} ref={containerRef}>
         <div className="select-input-container">
           <div className="select-inner">
             {selectedLabels.length > 0 &&
@@ -80,7 +90,6 @@ const Select = ({ style, className, placeholder, children }) => {
               onInput={handleInput}
               value={searchText}
               onFocus={handleFocus}
-              // onBlur={handleBlur}
             />
             <span>
               <CloseCircleOutlined  onClick={handleRemoveAll} />
@@ -97,4 +106,4 @@ const Select = ({ style, className, placeholder, children }) => {
   );
 };
 
-export default Select;
+export default MultiSelect;

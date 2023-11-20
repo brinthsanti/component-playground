@@ -1,46 +1,52 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useRef} from 'react';
 import './index.css';
-import { StarFilled } from '@ant-design/icons';
 
-const color =  {
-    filled: "#f5eb3b",
-    unfilled: "#DCDCDC",
-  };
 
-const Rate = ({
-    count = 5,
-    onRating,
-    rating
-}) => {
-    const [hoverRating, setHoverRating] = useState(0);
+function Rate({ totalCount = 5 }) {
+  const [rating, setRating] = useState(0);
+  const persistedRating = useRef(0);
 
-  const getColor = (index) => {
-    if (hoverRating >= index) {
-      return color.filled;
-    } else if (!hoverRating && rating >= index) {
-      return color.filled;
+
+  function handleMouseOver(rate) {
+    setRating(rate);
+  }
+
+  function handleMouseLeave(){
+    setRating(persistedRating.current);
+  }
+
+  function getBackground(index){
+     return index <= rating ? 'gold' : 'white';
+  }
+
+  function handleClick(index){
+    if(index === persistedRating.current){
+      persistedRating.current = 0;
+      return setRating(0);
     }
+    setRating(index);
+    persistedRating.current = index;
+  }
 
-    return color.unfilled;
-  };
+  return (
+    <div className="rating">
+      {[...Array(totalCount)].map((el, index) => (
+        <div
+          key={index}
+          onMouseOver={() => handleMouseOver(index+1)}
+          onMouseLeave={() => handleMouseLeave(index)}
+          onClick={()=> handleClick(index+1)}
+          className="star"
+          style={
+            {
+              background: getBackground(index+1),
+            }
+          }
+        ></div>
+      ))}
+    </div>
+  );
+}
 
-    const starRating = useMemo(() => {
-        return Array(count)
-          .fill(0)
-          .map((_, i) => i + 1)
-          .map((idx) => (
-            <StarFilled
-              key={idx}
-              className=""
-              onClick={() => onRating(idx)}
-              style={{ color: getColor(idx) }}
-              onMouseEnter={() => setHoverRating(idx)}
-              onMouseLeave={() => setHoverRating(0)}
-            />
-          ));
-      }, [count, rating, hoverRating]);
-      
-      return <div>{starRating}{hoverRating}</div>;
-};
 
 export default Rate;

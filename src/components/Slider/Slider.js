@@ -1,54 +1,53 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 
-const Slider = () => {
-    const [trackWidth, setTrackWidth] = useState(50);
-    const [mouseIn, setMouseIn] = useState(false);
-    const sliderRef = useRef();
-
+const RangeSlider = () => {
+    const [sliderValue, setSliderValue] = useState(0);
+    const [dragging, setDragging] = useState(false);
+    const sliderRef = useRef(null);
+  
+    const handleMouseDown = () => {
+      setDragging(true);
+    };
+  
+    const handleMouseUp = () => {
+      setDragging(false);
+    };
+  
+    const handleMouseMove = (event) => {
+      if (dragging) {
+        const sliderRect = sliderRef.current.getBoundingClientRect();
+        const percentage = (event.clientX - sliderRect.left) / sliderRect.width;
+        const newValue = Math.min(100, Math.max(0, percentage * 100)); // to maintain slider from 0 to 100
+  
+        setSliderValue(newValue);
+      }
+    };
+  
     useEffect(() => {
-        function handleMouseUp(e) {
-            setMouseIn(false);
-        }
-
-        function handleMouseMove(e) {
-            console.log(mouseIn);
-            if (!mouseIn) return;
-            setWidth(e);
-        }
-
-        window.addEventListener("mouseup", handleMouseUp);
-        window.addEventListener("mousemove", handleMouseMove);
-        return () => {
-            window.removeEventListener("mouseup", handleMouseUp);
-            window.removeEventListener("mousemove", handleMouseMove);
-        };
-    }, [mouseIn]);
-
-    function setWidth(e) {
-        const width = sliderRef.current.clientWidth;
-        const current = e.clientX;
-        setTrackWidth(Math.round((current / width) * 100));
-    }
-
-    function handleMouseDown(e) {
-        setMouseIn(true);
-    }
-
-    function handleClick(e) {
-        setWidth(e);
-    }
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+  
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      };
+    }, [dragging]);
+  
     return (
-        <div className="slider" onClick={handleClick} ref={sliderRef}>
-            <div className="slider-rail"></div>
-            <div className="slider-track" style={{ width: `${trackWidth}%` }}></div>
-            <div
-                className="slider-handle"
-                onMouseDown={handleMouseDown}
-                style={{ left: `${trackWidth}%` }}
-            ></div>
-        </div>
+      <div
+        className="custom-range-slider"
+        ref={sliderRef}
+        onMouseDown={handleMouseDown}
+      >
+        <div
+          className="slider-track"
+          style={{ width: `${sliderValue}%` }}
+        ></div>
+        <div className="slider-thumb" style={{ left: `${sliderValue}%` }}></div>
+        <p>Slider Value: {sliderValue}</p>
+      </div>
     );
-};
+  };
 
-export default Slider;
+export default RangeSlider;
