@@ -1,45 +1,36 @@
-.calendar{
- display: flex;
- flex-direction: column;
- min-width: 316px;
+.calendar {
+  display: flex;
+  flex-direction: column;
+  min-width: 316px;
 }
-
 
 .calendar .controls {
   display: flex;
 }
 
-.calendar .controls div{
-    padding: 10px;
-    border: 1px solid black;
-    cursor: pointer;
+.calendar .controls div {
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
 }
-.calendar .controls .descrip{
-    flex-grow: 1;
-    text-align: center;
-}
-
-
-.calendar .days > div{
-   border: 1px solid black;
-   padding: 10px;
-text-align: center;
+.calendar .controls .descrip {
+  flex-grow: 1;
+  text-align: center;
 }
 
-
-.calendar .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: bold;
+.calendar .days > div {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
 }
 
 .calendar .date_grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 
-.calendar .date_grid > div{
-    text-align: center;
-    border: 1px solid black;
-    padding: 10px;
+.calendar .date_grid > div {
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
 }

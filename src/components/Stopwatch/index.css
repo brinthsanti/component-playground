@@ -1,16 +1,20 @@
-.stopwatch{
-    background: black;
-    .time{
-      font-size: 80px;
-      color: white;
-      text-align: center;
-    }
-    .handles{
-      text-align: center;
-      button{
-        background-color: teal;
-        padding: 10px 20px;
-        cursor: pointer;
-      }
-    }
-  }
+.stopwatch {
+  background: black;
+}
+
+.stopwatch .time {
+  font-size: 80px;
+  color: white;
+  text-align: center;
+}
+
+.stopwatch .handles {
+  text-align: center;
+}
+
+.stopwatch .handles button {
+  background-color: teal;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+}

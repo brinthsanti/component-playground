@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Comment from './Comment/Comment';
-import { useImmer } from "use-immer";
 import './index.css';
 
 const CommentBox = ({ data = [], setData }) => {
@@ -11,6 +10,7 @@ const CommentBox = ({ data = [], setData }) => {
                 <input placeholder='type your comment'
                     value={inputVal}
                     onInput={(e) => {
+                        if(e.target.value)
                         setInputVal(e.target.value)
                     }}
                 ></input>

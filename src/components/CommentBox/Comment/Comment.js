@@ -11,19 +11,6 @@ const Comment = ({ id, comment, children, setData }) => {
         setToggle(prev => !prev)
     }
 
-    // first self written
-    function findById(comments, id) {
-        for (let i = 0; i < comments.length; i++) {
-            if (comments[i].id === id) {
-                return comments[i];
-            }
-
-            if (comment[i].children) {
-                return findById(comment[i].children)
-            }
-        }
-        return undefined;
-    }
 
     function handleReply(id) {
         const newComment = {

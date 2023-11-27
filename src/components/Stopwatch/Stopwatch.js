@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 
 import './index.css';
+
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const HOUR = 60 * MINUTE;
+const DAY = 24 * HOUR;
+
 export default function Stopwatch() {
     const [isRunning, setIsRunning] = useState(false);
     const [time, setTime] = useState(0);
@@ -35,10 +41,10 @@ export default function Stopwatch() {
     }
   
    
-     const seconds = Math.floor((time % 60000)/1000);
-     const minutes = Math.floor((time % (60 * 60000))/60000);
-     const hour = Math.floor((time % (24 * 60 * 60000)) / (60 * 60000));
-  
+     const seconds = Math.floor((time % MINUTE)/SECOND);
+     const minutes = Math.floor((time % HOUR)/MINUTE);
+     const hour = Math.floor((time % DAY) / HOUR);
+
     return (
       <div className="stopwatch">
         <p className="time">{hour.toString().padStart(2, '0')}:{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</p>

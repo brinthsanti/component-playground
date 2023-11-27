@@ -26,7 +26,7 @@ export default function Timer({duration = 5000}){
   },[isRunning, time])
 
    function handleReset(){
-      setTime(0);
+      setTime(duration);
    }
 
    function handleStart(){

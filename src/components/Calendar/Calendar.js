@@ -64,7 +64,8 @@ export default function Calendar() {
         <div onClick={() => handleMonthChange('next')}>{'>'}</div>
         <div onClick={() => handleYearChange('next')}>{'>>'}</div>
       </div>
-      <div className='days'>
+      
+      <div className='date_grid'>
         <div>SUN</div>
         <div>MON</div>
         <div>TUE</div>
@@ -72,8 +73,6 @@ export default function Calendar() {
         <div>THU</div>
         <div>FRI</div>
         <div>SAT</div>
-      </div>
-      <div className='date_grid'>
         {[...Array(firstDay.getDay())].map((_, index) => {
           return <div key={index + 1}></div>;
         })}

@@ -38,6 +38,7 @@ function Root() {
             <Route path="/breadcrumb" element={<BreadcrumbExamples />} />
             <Route path="/dropdown" element={<DropdownExamples />} />
             <Route path="/layout" element={<Layout />} />
+            <Route path='/grid' element={<Grid />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/pagination" element={<PaginationExample />} />
             <Route path="/infinite-scroller" element={<InfiniteScrollerExamples />} />
@@ -61,7 +62,6 @@ function Root() {
             <Route path="/comment-box" element={<CommentBoxExample />} />
             <Route path="/calendar" element={<CalendarExample />} />
             <Route path='/tictacktoe' element={<TictacktoeExamples />} />
-            <Route path='/grid' element={<Grid />} />
             <Route path='/nestedcheckboxes' element={<NestedCheckboxExamples />} />
             <Route path='scroller' element={<ScrollerExamples/>} />
             <Route path="/" element={<App />} />
