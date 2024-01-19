@@ -1,38 +1,50 @@
-
-.app {
-    display: flex;
+.app-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 30px;
 }
 
-/* Scroller example css */
-.appcontainer{
+.app-grid .app-card img{
+  max-width: 100%;
+}
+
+.app-grid .app-card{
+   cursor: pointer;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+}
+
+/* modal css */
+.modal-overlay {
    display: flex;
-}
-
-.appcontainer .menu{
-    position: fixed;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
  }
-.appcontainer .master{
-    flex-basis: 25%;
-    border: 2px solid gray;
-    min-width: 25%;
-}
-
-.appcontainer .content{
-   flex-basis: 75%;
-}
-
-.contentSection img{
-    width: 100%;
-    height: 250px;
-}
-
-.contentSection .images{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-
-/* ENDS */
-
-.appcommnetbox{
-   display: flex;
-}
+ 
+ .modal-content {
+   background-color: #fefefe;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+   max-width: 600px;
+   position: relative;
+ }
+ 
+ .close {
+   color: #aaa;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 24px;
+   cursor: pointer;
+ }
+ 
+ .close:hover {
+   color: black;
+ }

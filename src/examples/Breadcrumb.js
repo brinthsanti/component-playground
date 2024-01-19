@@ -1,20 +1,30 @@
-import React from 'react';
+import React , {useState, useEffect}from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 const BreadcrumbExamples = () => {
+    const [pathSegments, setPathSegments] = useState([]);
+
+    useEffect(() => {
+      // Dummy path for illustration purposes
+      const dummyPathname = "/products/category1/product123";
+      const segments = dummyPathname.split('/').filter(segment => segment !== '');
+  
+      setPathSegments(segments);
+    }, []);
+  
+    const breadcrumbItems = pathSegments.map((segment, index) => ({
+      text: segment,
+      url: `/${pathSegments.slice(0, index + 1).join('/')}`,
+    }));
+  console.log(pathSegments, breadcrumbItems);
+  /**
+   0: {text: 'products', url: '/products'}
+   1: {text: 'category1', url: '/products/category1'}
+   2: {text: 'product123', url: '/products/category1/product123'}
+   length: 3
+   */
     return (
         <div>
-            <h3>BreadcrumbExamples</h3>
-            <Breadcrumb seperator='/'>
-                <Breadcrumb.Item>
-                    Item 1
-                </Breadcrumb.Item>
-                <Breadcrumb.Item href='https://google.com'>
-                    Item 2
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    Item 3
-                </Breadcrumb.Item>
-            </Breadcrumb>
+            <Breadcrumb items={breadcrumbItems} />
         </div>
     );
 };

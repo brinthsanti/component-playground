@@ -1,0 +1,22 @@
+.gallery {
+    background: #28282B;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .gallery__card {
+    border: 10px solid white;
+  }
+  
+  .gallery__card img {
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+  }
+  
+  .gallery__card h3 {
+    color: white;
+    text-align: center;
+  }
+  

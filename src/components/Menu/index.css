@@ -12,8 +12,13 @@
 .menu .menu-submenu .menu-submenu-title {
   display: flex;
   padding: 10px;
+  align-items: center;
 }
 
 .menu .menu-submenu .menu-submenu-title .icon {
   padding-right: 10px;
+}
+
+.menu .menu-submenu{
+  margin-left: 20px;
 }

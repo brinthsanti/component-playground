@@ -30,6 +30,7 @@ import TictacktoeExamples from './examples/Tictacktoe';
 import App from './App';
 import NestedCheckboxExamples from "./examples/NestedCheckbox";
 import ScrollerExamples from "./examples/Scroller";
+import ShowMoreExamples from "./examples/ShowMore";
 
 function Root() {
     return (
@@ -40,6 +41,7 @@ function Root() {
             <Route path="/layout" element={<Layout />} />
             <Route path='/grid' element={<Grid />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/showmore" element={<ShowMoreExamples />} />
             <Route path="/pagination" element={<PaginationExample />} />
             <Route path="/infinite-scroller" element={<InfiniteScrollerExamples />} />
             <Route path="/stepper" element={<StepsExample />} />

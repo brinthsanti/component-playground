@@ -8,7 +8,9 @@ export default function Dropdown({ items, children, className, renderItems, trig
     useOnClickOutside(dropdownRef, handleMouseLeave);
   
   
-    function handleClick() {
+    function handleClick(event) {
+      event.stopPropagation();
+      console.log('clicked', event.nativeEvent.currentTarget);
       setShowDropdownItems(!showDropdownItems);
     }
   
@@ -20,8 +22,12 @@ export default function Dropdown({ items, children, className, renderItems, trig
       setShowDropdownItems(false);
     }
   
-    const prefixClass = "appdropdown";
+    const prefixClass = "dropdown";
     const classes = [prefixClass, className].filter(Boolean).join(" ");
+    const dropdownClasses = [
+      `${prefixClass}-items`,
+      showDropdownItems ? 'open' : '',
+    ].filter(Boolean).join(" ");
     return (
       <div
         className={classes}
@@ -32,11 +38,7 @@ export default function Dropdown({ items, children, className, renderItems, trig
       >
         {children}
         <div
-          className={`${prefixClass}-items`}
-          style={{
-            // display: showDropdownItems ? "block" : "none",
-            opacity: showDropdownItems ? 1 : 0,
-          }}
+          className={dropdownClasses}
         >
           {items.map((item) => renderItems(item))}
         </div>
@@ -49,5 +51,7 @@ export default function Dropdown({ items, children, className, renderItems, trig
   }
   
   /**
-   The transition property in CSS doesn't directly work with the display property, so using display: none and display: block won't create a smooth transition effect. The display property doesn't transition between values like opacity or height would.
+   The transition property in CSS doesn't directly work with the display property,
+    so using display: none and display: block won't create a smooth transition effect. 
+    The display property doesn't transition between values like opacity or height would.
    */

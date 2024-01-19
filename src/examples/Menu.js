@@ -1,13 +1,12 @@
 import React from 'react';
 import { Menu } from '../components/Menu';
 import { Row, Col } from '../components/Grid';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
 const MenuExample = () => {
     const items = [
         {
             label: 'Navigation One',
-            icon: <MailOutlined />,
+            icon: <h3>&copy;</h3>,
             children: [
                 { label: 'Option 2' },
                 { label: 'Option 3' },
@@ -16,17 +15,17 @@ const MenuExample = () => {
         },
         {
             label: 'Navigation Two',
-            icon: <AppstoreOutlined />,
+            icon: <h3>&copy;</h3>,
             children: [
                 { label: 'Option 5' },
                 { label: 'Option 6' },
                 {
                     label: 'Submenu',
-                    icon: <MailOutlined />,
+                    icon: <h3>&copy;</h3>,
                     children: [
                         {
                             label: 'Sub Navigation One',
-                            icon: <MailOutlined />,
+                            icon: <h3>&copy;</h3>,
                             children: [
                                 { label: 'Option 2' },
                                 { label: 'Option 3' },
@@ -39,7 +38,7 @@ const MenuExample = () => {
         },
         {
             label: 'Navigation Three',
-            icon: <SettingOutlined />,
+            icon: <h3>&copy;</h3>,
             children: [
                 { label: 'Option 9' },
                 { label: 'Option 10' },
@@ -55,6 +54,7 @@ const MenuExample = () => {
                 <Col span={12}>
                     < Menu
                         items={items}
+                        handle={()=>{}}
                     />
                 </Col>
                 <Col span={12}>TWO</Col>

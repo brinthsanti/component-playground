@@ -14,7 +14,8 @@ const DropdownExample = () => {
             <Dropdown
         items={products}
         renderItems={(item) => (
-          <a href="https://www.google.com"><DropdownItem key={item.id} title={item.title} /></a>
+          // <a href="https://www.google.com" key={item.id}><DropdownItem  title={item.title} /></a>
+          <DropdownItem  title={item.title} />
         )}
         trigger="click"
       >

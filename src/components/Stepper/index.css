@@ -28,7 +28,9 @@
   Setting flex-basis: 0; along with flex-grow: 1; allows the items to share the available space equally based on the flex-grow property, ignoring the content's intrinsic size.
   By combining these properties, you create a flexible layout where items can grow based on the flex-grow values but won't shrink (flex-shrink: 0;) and will start with an initial size of zero (flex-basis: 0;).
   
-  This combination is particularly useful when you want items to share space equally, and you want to prevent a single item from growing excessively based on its content. The flex-basis: 0; effectively resets the initial size, allowing flex-grow to work more consistently across items. */
+  This combination is particularly useful when you want items to share space equally,
+   and you want to prevent a single item from growing excessively based on its content. 
+   The flex-basis: 0; effectively resets the initial size, allowing flex-grow to work more consistently across items. */
   }
   
   .stepper .steps-container .line{

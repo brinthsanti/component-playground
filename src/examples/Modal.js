@@ -13,10 +13,9 @@ const ModalExamples = () => {
             <Modal
             show={showModal}
             title="My modal"
-            onClose={() => setShowModal(false)}
-            >
-                Hey i'm your modal
-            </Modal>
+            toggle={setShowModal}
+            renderItems={(modalContent) => <h3> Hey i'm your modal</h3>}
+/>
         </div>
     );
 };

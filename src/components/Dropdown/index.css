@@ -1,15 +1,36 @@
+/* Style the dropdown button */
 .dropdown {
-    position: relative;
-    display: inline;
-  }
-  
-  .dropdown-items {
-    border: 1px solid gray;
-    padding: 5px;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-      0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-items {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* horizontal/ vertical/ blur radius/ color*/
+  z-index: 1;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Add a transition effect */
+}
+
+/* setting opacity would make the element invisible but still interactive so visiblity would make 
+the element non interactive.
+  */
+
+.dropdown-items.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear 0s; /* Add a transition effect */
+}
+
+.dropdown-items a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-items a:hover {
+  background-color: #ddd;
+}

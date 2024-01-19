@@ -15,13 +15,19 @@ export default function useOnClickOutside(ref, callback) {
                 callback(event);
             };
             document.addEventListener("mousedown", listener);
-            document.addEventListener("touchstart", listener);
+            // document.addEventListener("touchstart", listener);
             return () => {
                 document.removeEventListener("mousedown", listener);
-                document.removeEventListener("touchstart", listener);
+                // document.removeEventListener("touchstart", listener);
             };
         },
         // add ref and callback to effect dependencies
         [ref, callback]
     );
 }
+
+/**
+ The contains() method of the Node interface returns a boolean value indicating whether a node is a descendant 
+ of a given node, that is the node itself, one of its direct children (childNodes), one of the children's direct 
+ children, and so on.
+ */
