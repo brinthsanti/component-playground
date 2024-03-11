@@ -1,0 +1,50 @@
+.slideshow {
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .slideshow .slide {
+    display: none;
+  }
+  
+  .slideshow .slide.active {
+    display: block;
+  }
+  .slideshow .slide img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .slideshow .controls {
+    text-align: center;
+  }
+  .slideshow .controls button {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .slideshow .controls button.active {
+    background-color: teal;
+  }
+  
+  .arrows > * {
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    transform: translateY(-50%);
+  }
+  .arrows .next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+  
+  .arrows .prev {
+    position: absolute;
+    top: 50%;
+  }
+  

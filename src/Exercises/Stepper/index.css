@@ -1,0 +1,45 @@
+.newstepper {
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .step__circle {
+    height: 60px;
+    width: 60px;
+    background-color: lightgray;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s linear;
+  }
+  
+  .stepper__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .step {
+    flex-basis: min-content;
+  }
+  
+  .progress__line {
+    width: 99%;
+    height: 8px;
+    background-color: lightgray;
+    position: absolute;
+    top: calc(50% - 23px);
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: lightseagreen;
+    height: 100%;
+    transition: all 0.25s linear;
+  }
+  
+  .bg_green {
+    background-color: lightseagreen;
+  }
+  

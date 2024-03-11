@@ -9,15 +9,13 @@ function Rate({ totalCount = 5 }) {
 
   function handleMouseOver(rate) {
     setRating(rate);
+    persistedRating.current = rate;
   }
 
   function handleMouseLeave(){
     setRating(persistedRating.current);
   }
 
-  function getBackground(index){
-     return index <= rating ? 'gold' : 'white';
-  }
 
   function handleClick(index){
     if(index === persistedRating.current){
@@ -39,7 +37,7 @@ function Rate({ totalCount = 5 }) {
           className="star"
           style={
             {
-              background: getBackground(index+1),
+              background: index+1 <= rating ? 'gold' : 'white',
             }
           }
         ></div>

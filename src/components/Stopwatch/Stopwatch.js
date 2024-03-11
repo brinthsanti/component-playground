@@ -18,14 +18,14 @@ export default function Stopwatch() {
           setTime((time) => time + 1000);
         }, 1000);
       }
-  
+       // feel like redundant
       if (!isRunning && intervalId) {
         clearInterval(intervalId);
       }
       return () => {
         clearInterval(intervalId);
       };
-    }, [isRunning, time]);
+    }, [isRunning]);
   
     function handleStart() {
       setIsRunning(true);

@@ -1,0 +1,120 @@
+/* DataTable.css */
+
+/* Table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header */
+  .custom-header {
+    background-color: #f2f2f2;
+  }
+  
+  .custom-header th {
+    /* important */
+    min-width: 200px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    user-select: none;
+  }
+  
+  /* Rows */
+  .custom-row:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .custom-row:hover {
+    background-color: #ddd;
+  }
+  
+  /* Cells */
+  .custom-cell {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Hover effect on cells */
+  .custom-row:hover .custom-cell {
+    background-color: #ddd;
+  }
+  
+
+  /***table****/
+
+  .table-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 400px;
+    overflow-y: scroll;
+  }
+
+  .table-container .search{
+    align-self: end;
+  }
+
+  .tableHeader{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    position: relative;
+    user-select: none;
+  }
+
+ .tableHeader .sorter > *{
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+ }
+
+ thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+ }
+ .tableHeader .sorter > *:hover{
+   background-color: lightslategray;
+ }
+
+ .tableHeader .sorter > *:active{
+    color: white;
+ }
+
+ .pagination button{
+  padding: 10px;
+  cursor: pointer;
+ }
+ .pagination button.active{
+    background-color: slategray;
+    color: white;
+ }
+
+/* Column Resizer */
+
+.columnResizer{
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  right: 0;
+  bottom: 0;
+  background: teal;
+  cursor: col-resize;
+  z-index: 100;
+}
+.columnResizerContainer{
+  position: relative;
+}
+
+/* frozen */
+.frozen{
+
+}
+
+.custom-row{
+ position: relative;
+}
+
